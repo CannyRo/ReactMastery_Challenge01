@@ -1,0 +1,15 @@
+@import '../util/colors.scss';
+
+.header{
+    width: 100%;
+    height: auto;
+    color: $white;
+    padding: 1rem;
+    // glassmorphism //
+    background: $gm-background;
+    box-shadow: 0 8px 32px 0 $gm-shadow;
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 0 0 1rem 1rem;
+    border: 1px solid $gm-border;
+}

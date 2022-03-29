@@ -1,0 +1,165 @@
+@import '../util/colors.scss';
+@import '../util/fonts.scss';
+
+form{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    width: 80%;
+    min-width: 25rem;
+    height: auto;
+    margin: 10.5rem 1rem;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    // Glassmorphism //
+    background: $gm-background;
+    box-shadow: 0 8px 32px 0 $gm-shadow;
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 1rem;
+    border: 1px solid $smooth-brown;
+
+    &_top{
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: $white;
+        background-color: $smooth-brown;
+        border-radius: 1rem 1rem 0 0;
+    }
+    &_middle{
+        color: $white;
+        padding: 1rem;
+
+    }
+    &_bottom{
+        width: 100%;
+        padding: 1rem;
+        background-color: $smooth-brown;
+        border-radius: 0 0 1rem 1rem;
+    }
+}
+
+.avatar-input{
+    display: none;
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid #000;
+    background-color: #000;
+}
+.avatar-circle{
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+    background-image: url("../../images/avatar_01.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: $black;
+    color: $smooth-brown;
+    :hover{
+        background-image: url("../../images/camera-solid.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-color: rgba($color: $black, $alpha: 0.4);
+    }
+}
+.for_hover_avatar{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+}
+
+.input_text{
+    width: 16rem;
+    height: 2rem;
+    margin: 0.5rem;
+    font-family: $font;
+    color: $black;
+    padding-left: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.datas_num{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.label_num{
+    display: block;
+}
+
+.input_num{
+    width:3rem;
+    height: 2rem;
+    font-family: $font;
+    color: $white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid $white;
+    background: none;
+    text-align: center;
+}
+
+.datas_others{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.div_obj{
+    display: flex;
+}
+.div_obj_50{
+    width: 50%;
+    text-align: left;
+    padding: 1rem;
+    input{
+        margin-bottom: 1rem;
+    }
+}
+.list_intolerance{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.autres_intolerances{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    input{
+        width: 16rem;
+        height: 2rem;
+        margin: 0.5rem;
+        font-family: $font;
+        color: $black;
+        padding-left: 1rem;
+        border-radius: 0.5rem;
+        border: none;
+    }
+}
+.button_form{
+    width: 10rem;
+    height: 2rem;
+    margin: 0.5rem;
+    font-family: $font;
+    color: $black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+}

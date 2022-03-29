@@ -1,0 +1,31 @@
+// Inspired by https://css-tricks.com/snippets/sass/mixin-manage-breakpoints/ and https://github.com/thecodercoder/fem-dklt-toggle /
+
+// sm 640px, md 768px, lg 1024px, xl 1280px, 2xl 1536px
+$breakpoints-up: (
+    'small': '40em',
+    'medium': '48em',
+    'large': '64em',
+    'xlarge': '80em',
+    'xxlarge': '96em',
+);
+
+// sm 639px, md 767px, lg 1023px, xl 1279px, 2xl 1535px
+$breakpoints-down : (
+    'xsmall' : '39.9375em',
+    'small': '47.9375em',
+    'medium': '63.9375em',
+    'large': '79.9375em',
+    'xlarge': '95.9375em',
+);
+
+@mixin breakpoint($size){
+    @media (min-width: map-get($breakpoints-up, $size)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size){
+    @media (max-width: map-get($breakpoints-down, $size)) {
+        @content;
+    }
+}

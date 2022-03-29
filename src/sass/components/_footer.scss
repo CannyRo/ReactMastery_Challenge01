@@ -1,0 +1,16 @@
+@import '../util/colors.scss';
+
+.footer{
+    width: 100%;
+    height: auto;
+    color: $white;
+    padding: 1rem;
+    font-size: 0.7rem;
+    // glassmorphism //
+    background: $gm-background;
+    box-shadow: 0 8px 32px 0 $gm-shadow;
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 1rem 1rem 0 0;
+    border: 1px solid $gm-border;
+}
