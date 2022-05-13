@@ -1,21 +1,26 @@
 @import '../util/colors.scss';
 @import '../util/fonts.scss';
+@import '../util/breakpoint.scss';
 
 form{
     width: 100%;
     height: auto;
-
     display: flex;
     justify-content: center;
 }
 
 .card{
-    width: 80%;
-    min-width: 25rem;
+    width: 100%;
     height: auto;
-    margin: 10.5rem 1rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
     overflow: hidden;
     box-sizing: border-box;
+
+    @include breakpoint(small){
+        width: 90%;
+        max-width: 50rem;
+    }
 
     // Glassmorphism //
     background: $gm-background;
@@ -26,19 +31,33 @@ form{
     border: 1px solid $smooth-brown;
 
     &_top{
-        width: 100%;
         padding: 1rem;
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
         align-items: center;
         color: $white;
         background-color: $smooth-brown;
         border-radius: 1rem 1rem 0 0;
+        @include breakpoint(small){
+            flex-direction: row;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
     }
     &_middle{
-        color: $white;
         padding: 1rem;
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $white;
+        @include breakpoint(small){
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        @include breakpoint(large){
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
     }
     &_bottom{
         width: 100%;
@@ -48,6 +67,12 @@ form{
     }
 }
 
+.avatar_frame{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .avatar-input{
     display: none;
     width: 10rem;
@@ -80,10 +105,25 @@ form{
     border-radius: 100%;
 }
 
+.identity_frame{
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input_text_frame{
+    width: 100%;
+    max-width: 25rem;
+    padding-bottom: 3rem;
+}
+
 .input_text{
-    width: 16rem;
+    display: block;
+    width: 100%;
+    max-width: 25rem;
     height: 2rem;
-    margin: 0.5rem;
     font-family: $font;
     color: $black;
     padding-left: 1rem;
@@ -91,16 +131,46 @@ form{
     border: none;
 }
 
-.datas_num{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+// Error class
+.shadow_red{
+    box-shadow: 0px 0px 15px 2px #FF0000;
 }
+.input_text_error{
+    position: absolute;
+    padding-top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%) ;
+    @include breakpoint(small){
+        left: auto;
+    }
+}
+.input_num_error{
+    position: absolute;
+    padding-top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%) ;
+    @include breakpoint(small){
+        left: auto;
+    }
+    @include breakpoint(medium){
+        max-width: 8rem;
+    }
+}
+// FIN Error class
 
+.datas_num{
+    width: 100%;
+    @include breakpoint(medium){
+        display: flex;
+        justify-content: space-around;
+    }
+}
+.input_num_frame{
+    padding-bottom: 4rem;
+}
 .label_num{
     display: block;
 }
-
 .input_num{
     width:3rem;
     height: 2rem;
@@ -113,45 +183,65 @@ form{
     background: none;
     text-align: center;
 }
+.unity{
+    position: absolute;
+    margin-left: 0.5rem;
+    margin-top: 0.2rem;
+}
 
+// 
 .datas_others{
     padding-top: 1rem;
     padding-bottom: 1rem;
+    @include breakpoint(medium){
+        width: 100%;
+    }
 }
 
 .div_obj{
-    display: flex;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: start;
+    @include breakpoint(medium){
+        display: flex;
+        justify-content: space-around;
+    }
 }
 .div_obj_50{
-    width: 50%;
-    text-align: left;
-    padding: 1rem;
-    input{
-        margin-bottom: 1rem;
+    @include breakpoint(medium){
+        width: 50%;
+        max-width: 25rem;
     }
 }
+.check_group{
+    margin-top: 1rem;
+}
+.radio_margin{
+    margin-right: 1rem;
+}
+
+// INTOLERANCES
 .list_intolerance{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-.autres_intolerances{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    input{
-        width: 16rem;
-        height: 2rem;
-        margin: 0.5rem;
-        font-family: $font;
-        color: $black;
-        padding-left: 1rem;
-        border-radius: 0.5rem;
-        border: none;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: start;
+    @include breakpoint(medium){
+        display: flex;
+        justify-content: space-around;
     }
 }
+
+.autres_intolerances{
+    @include breakpoint(medium){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    input{
+        margin-top: 1rem;
+    }
+}
+
 .button_form{
     width: 10rem;
     height: 2rem;
